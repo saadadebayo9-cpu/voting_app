@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Select Candidate</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Choose Your Candidate</h1>
+        <p>Select ONE candidate of your choice.</p>
+
+        <form action="/vote" method="POST">
+
+            {% for candidate in candidates %}
+
+                <label class="candidate">
+
+                    <input
+                        type="radio"
+                        name="candidate"
+                        value="{{ candidate }}"
+                        required
+                    >
+
+                    <span>{{ candidate }}</span>
+
+                </label>
+
+            {% endfor %}
+
+            <button type="submit">Cast My Vote</button>
+
+        </form>
+
+        <p class="note">
+            You cannot change your vote after submission.
+        </p>
+
+    </div>
+
+</body>
+</html>

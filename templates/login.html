@@ -1,0 +1,47 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Voter Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+    <div class="container">
+
+        <h1>Voter Login</h1>
+        <p>Enter your details to access the voting portal.</p>
+
+        {% if error %}
+            <p class="error">{{ error }}</p>
+        {% endif %}
+
+        <form action="/login" method="POST">
+
+            <label>Email Address</label>
+            <input
+                type="email"
+                name="email"
+                placeholder="Enter your email"
+                required
+            >
+
+            <label>Date of Birth</label>
+            <input
+                type="date"
+                name="dob"
+                required
+            >
+
+            <button type="submit">Continue to Vote</button>
+
+        </form>
+
+        <p class="note">Only persons aged 18 and above can vote.</p>
+
+    </div>
+
+</body>
+</html>
